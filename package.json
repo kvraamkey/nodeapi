@@ -8,9 +8,13 @@
   "repositories": [
     {
       "type": "git",
-      "url": "https://github.com/kvraamkey/edxi-node-api.git"
+      "url": "git://github.com/kvraamkey/edxi-node-api.git"
     }
   ],
+  "engines": {
+    "npm": ">=5",
+    "node": ">=8.15.1"
+  },
   "main": "src/app.js",
   "scripts": {
     "dev": "nodemon --exec babel-node src/app.js"
