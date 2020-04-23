@@ -25,11 +25,17 @@ module.exports = function (plop) {
             default: false,
             message: 'Do you want db?',
         },
+        {
+            type: 'confirm',
+            name: 'wantJoi',
+            default: false,
+            message: 'Do you want Joi Validation?',
+        },
         ],
         actions: [{
             type: 'add',
             path: '../src/controllers/{{camelCase name}}/{{camelCase action}}.js',
-            templateFile: 'templates/controller.js',
+            templateFile: 'templates/controller.js.hbs',
             abortOnFail: true,
         }]
     });

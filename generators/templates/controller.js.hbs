@@ -1,0 +1,35 @@
+/**
+* {{camelCase action}} - Describe what your {{camelCase action}} does.
+*
+* @controller {{camelCase name}}
+* @action {{camelCase action}}
+*
+* [successResponse description]
+*
+* @param {String} message [message description]
+* @param {Array or JSON} data [data description]
+*
+*/
+
+{{#if wantJoi }}
+import Joi from '@hapi/joi'
+{{/if}}
+{{#if wantDb }}
+import { db,table } from '#root/config';
+{{/if}}
+import { to, {{#if wantJoi }}validationError{{/if}}, successResponse } from '#root/helpers';
+
+{{#if wantJoi }}
+const schema = Joi.object({});
+{{/if}}
+
+export default async ({ postData }) => {
+
+{{#if wantJoi}}
+const { error } = schema.validate({ ...postData });
+if (error) return validationError(error)
+{{/if}}
+
+return successResponse("success response", []);
+
+};
