@@ -9,7 +9,7 @@
   "repositories": [
     {
       "type": "git",
-      "url": "git://github.com/kvraamkey/edxi-node-api.git"
+      "url": "git://github.com/kvraamkey/nodeapi.git"
     }
   ],
   "engines": {
