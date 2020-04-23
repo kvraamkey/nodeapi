@@ -38,5 +38,15 @@
     "plop": "^2.6.0",
     "uuid": "^7.0.3"
   },
+  "keywords": [
+    "nodejs",
+    "expressjs",
+    "knexjs",
+    "jwt-authentication",
+    "token-based-authentication",
+    "rest-api",
+    "es6",
+    "boilerplate"
+  ],
   "license": "MIT"
 }
