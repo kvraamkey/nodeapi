@@ -11,12 +11,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/kvraamkey/edxi-react-app.git"
+    "url": "git://github.com/kvraamkey/nodeapi.git"
   },
   "bugs": {
-    "url": "https://github.com/kvraamkey/edxi-react-app/issues"
+    "url": "https://github.com/kvraamkey/nodeapi/issues"
   },
-  "homepage": "https://github.com/kvraamkey/edxi-react-app#readme",
+  "homepage": "https://github.com/kvraamkey/nodeapi#readme",
   "author": "Ramki A <kvraamkeydev@gmail.com>",
   "maintainers": [
     "Ramki A <kvraamkeydev@gmail.com>"
