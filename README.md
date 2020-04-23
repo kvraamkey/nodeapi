@@ -1,3 +1,3 @@
-# React Multiselect Dropdown with Limit
+## React Multiselect Dropdown with Limit
 
 ### Installing / Getting started
