@@ -1,7 +1,7 @@
 {
   "name": "@kvraamkey/nodeapi",
   "description": "A boilerplate for REST API Development with Node.js, Express, and Knex",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
   "scripts": {
     "start": "node start.js"
