@@ -1,53 +1,8 @@
 {
-  "name": "@kvraamkey/node-api",
-  "description": "A highly scalable with the best developer experience and a focus on performance and best practices.",
+  "name": "edxi-node-api",
   "version": "1.0.0",
-  "author": "Ramki A <kvraamkeydev@gmail.com>",
-  "maintainers": [
-    "Ramki A <kvraamkeydev@gmail.com>"
-  ],
-  "repositories": [
-    {
-      "type": "git",
-      "url": "git://github.com/kvraamkey/edxi-node-api.git"
-    }
-  ],
-  "engines": {
-    "npm": ">=5",
-    "node": ">=8.15.1"
-  },
-  "main": "src/app.js",
-  "scripts": {
-    "start": "cross-env NODE_ENV=production babel-node src/app.js",
-    "dev": "cross-env NODE_ENV=development nodemon --exec babel-node src/app.js",
-    "generate": "plop --plopfile generators/index.js"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/node": "^7.8.7",
-    "@babel/preset-env": "^7.9.5",
-    "nodemon": "^2.0.3"
-  },
-  "dependencies": {
-    "@hapi/joi": "^17.1.1",
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "cross-env": "^7.0.2",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "knex": "^0.21.0",
-    "plop": "^2.6.0",
-    "uuid": "^7.0.3"
-  },
-  "keywords": [
-    "nodejs",
-    "expressjs",
-    "knexjs",
-    "jwt-authentication",
-    "token-based-authentication",
-    "rest-api",
-    "es6",
-    "boilerplate"
-  ],
+  "main": "index.js",
+  "repository": "https://github.com/kvraamkey/edxi-node-api.git",
+  "author": "Ramki <kvraamkeydev@gmail.com>",
   "license": "MIT"
 }
