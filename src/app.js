@@ -5,7 +5,7 @@ import cors from "cors";
 import { accessEnv } from './helpers/accessEnv';
 import { config } from './config';
 import setupRoutes from "./routes";
-import { errorHandler } from "./middlewares";
+import { errorHandler, checkDomain } from "./middlewares";
 
 /**
  * Express instance
@@ -35,6 +35,8 @@ app.use(
         optionsSuccessStatus: 200
     })
 );
+
+app.use(checkDomain(config.allowedDomains));
 
 // serve static files from a given folder
 app.use('/static', express.static('public'));
