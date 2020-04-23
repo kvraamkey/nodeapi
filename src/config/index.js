@@ -2,10 +2,12 @@
  * [config variables]
  */
 
+import { accessEnv } from "../helpers";
+
 export const config = {
     appName: "nodeapi",
     poweredBy: "kvraamkey",
-    env: process.env.NODE_ENV,
-    isProduction: process.env.NODE_ENV === 'production',
-    allowedDomains: [],
+    env: accessEnv("NODE_ENV", 'developmnt'),
+    isProduction: accessEnv("NODE_ENV", 'production') === 'production',
+    allowedDomains: accessEnv("ALLOWED_DOMAINS").split(','),
 }
