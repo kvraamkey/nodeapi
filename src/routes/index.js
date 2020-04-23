@@ -4,8 +4,8 @@
  * @return  {[post request]}  [return Global Routes with post request]
  */
 
-import { config } from './../config';
-import { validationError, to } from './../helpers';
+import { config, esConnection, db } from './../config';
+import { validationError, to, accessEnv } from './../helpers';
 
 export default (app) => {
 
@@ -23,6 +23,16 @@ export default (app) => {
 
             const sendRequestData = { postData }
 
+            if (accessEnv("ES_ENABLED") === "true") {
+                sendRequestData.es = esConnection
+            }
+
+            if (accessEnv("DB_ENABLED") === "true") {
+                const [isDbConnected] = await to(db.raw('select 1+1 as result'));
+                if (isDbConnected) return res.status(200).json(validationError({ message: isDbConnected.message }));
+                sendRequestData.db = db;
+            }
+
             if (err) return res.status(200).json(validationError({
                 message: config.isProduction ? "A valid [action] or [controller] is required." : err.message,
             }));
@@ -35,7 +45,8 @@ export default (app) => {
             return res.status(200).json(validationError({
                 errorType: e.name,
                 message: e.message,
-                stack: e.stack
+                stack: e.stack,
+                esError: e.meta
             }));
         }
 
