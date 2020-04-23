@@ -1,8 +1,33 @@
 {
-  "name": "edxi-node-api",
+  "name": "@kvraamkey/nodeapi",
+  "description": "A boilerplate for REST API Development with Node.js, Express, and Knex",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "https://github.com/kvraamkey/edxi-node-api.git",
-  "author": "Ramki <kvraamkeydev@gmail.com>",
-  "license": "MIT"
+  "scripts": {
+    "start": "node start.js"
+  },
+  "bin": {
+    "@kvraamkey/nodeapi": "start.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/kvraamkey/edxi-react-app.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kvraamkey/edxi-react-app/issues"
+  },
+  "homepage": "https://github.com/kvraamkey/edxi-react-app#readme",
+  "author": "Ramki A <kvraamkeydev@gmail.com>",
+  "maintainers": [
+    "Ramki A <kvraamkeydev@gmail.com>"
+  ],
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "dependencies": {
+    "check-node-version": "^4.0.2",
+    "fs-extra": "^8.1.0"
+  },
+  "devDependencies": {
+    "chalk": "^3.0.0"
+  }
 }
