@@ -1,5 +1,6 @@
 {
-  "name": "edxi-node-api",
+  "name": "@kvraamkey/node-api",
+  "description": "A highly scalable with the best developer experience and a focus on performance and best practices.",
   "version": "1.0.0",
   "author": "Ramki A <kvraamkeydev@gmail.com>",
   "maintainers": [
