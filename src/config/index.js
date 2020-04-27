@@ -5,6 +5,7 @@
 import { accessEnv } from "../helpers";
 export * from "./knexConnection";
 export * from "./esConnection";
+export * from "./emailConnection";
 
 export const config = {
     appName: "nodeapi",
