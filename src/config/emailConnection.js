@@ -1,11 +1,11 @@
 import nodemailer from "nodemailer";
-import hbs from 'nodemailer-handlebars';
+import EmailTemplate from 'email-templates';
 
 // Only needed if you don't have a real mail account for testing
 // const testAccount = await nodemailer.createTestAccount();
 
 // create reusable transporter object using the default SMTP transport
-export const transporter = nodemailer.createTransport({
+const transporter = nodemailer.createTransport({
     host: "smtp.ethereal.email",
     port: 587,
     secure: false, // true for 465, false for other ports
@@ -15,7 +15,11 @@ export const transporter = nodemailer.createTransport({
     }
 });
 
-transporter.use('compile', hbs({
-    viewEngine: 'express-handlebars',
-    viewPath: 'views/email/'
-}));
+
+export const email = new EmailTemplate({
+    views: { root: './src/emailTemplates', options: { extension: 'ejs' } },
+    preview: true,
+    send: true,
+    transport: transporter
+});
+

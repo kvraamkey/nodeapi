@@ -15,9 +15,9 @@
 import Joi from '@hapi/joi'
 {{/if}}
 {{#if wantDb }}
-import { db,table } from '#root/config';
+import { db,table } from './../../config';
 {{/if}}
-import { to, {{#if wantJoi }}validationError{{/if}}, successResponse } from '#root/helpers';
+import { to, {{#if wantJoi }}validationError{{/if}}, successResponse } from './../../helpers';
 
 {{#if wantJoi }}
 const schema = Joi.object({});
