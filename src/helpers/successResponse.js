@@ -6,14 +6,13 @@
  */
 
 export const successResponse = (message, data) => {
-
     let response = {
         error: false,
         message,
-    }
+    };
 
     if (data) {
-        if (Array.isArray(data)) response.count = data.length
+        if (Array.isArray(data)) response.count = data.length;
         response.data = data;
     }
 
