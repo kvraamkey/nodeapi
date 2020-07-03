@@ -1,62 +1,67 @@
 {
-  "name": "node-api",
-  "description": "A highly scalable with the best developer experience and a focus on performance and best practices.",
-  "version": "1.1.0",
-  "author": "Ramki A <kvraamkeydev@gmail.com>",
-  "maintainers": [
-    "Ramki A <kvraamkeydev@gmail.com>"
-  ],
-  "repositories": [
-    {
-      "type": "git",
-      "url": "git://github.com/kvraamkey/nodeapi.git"
-    }
-  ],
-  "engines": {
-    "npm": ">=5",
-    "node": ">=8.15.1"
-  },
-  "main": "src/app.js",
-  "scripts": {
-    "start": "cross-env NODE_ENV=production babel-node src/app.js",
-    "dev": "cross-env NODE_ENV=development nodemon --exec babel-node src/app.js",
-    "generate": "plop --plopfile generators/index.js",
-    "db": "knex",
-    "format": "prettier --write \"src/**/*.{js,ejs}\"",
-    "format:check": "prettier -c \"src/**/*.{js,ejs}\""
-  },
-  "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/node": "^7.8.7",
-    "@babel/preset-env": "^7.9.5",
-    "nodemon": "^2.0.3",
-    "prettier": "^2.0.5"
-  },
-  "dependencies": {
-    "@elastic/elasticsearch": "^7.6.1",
-    "@hapi/joi": "^17.1.1",
-    "body-parser": "^1.19.0",
-    "cors": "^2.8.5",
-    "cross-env": "^7.0.2",
-    "dotenv": "^8.2.0",
-    "ejs": "^3.1.3",
-    "email-templates": "^7.0.5",
-    "express": "^4.17.1",
-    "knex": "^0.21.0",
-    "mysql": "^2.18.1",
-    "nodemailer": "^6.4.6",
-    "plop": "^2.6.0",
-    "uuid": "^7.0.3"
-  },
-  "keywords": [
-    "nodejs",
-    "expressjs",
-    "knexjs",
-    "jwt-authentication",
-    "token-based-authentication",
-    "rest-api",
-    "es6",
-    "boilerplate"
-  ],
-  "license": "MIT"
+    "name": "node-api",
+    "description": "A highly scalable with the best developer experience and a focus on performance and best practices.",
+    "version": "1.1.0",
+    "author": "Ramki A <kvraamkeydev@gmail.com>",
+    "maintainers": [
+        "Ramki A <kvraamkeydev@gmail.com>"
+    ],
+    "repositories": [
+        {
+            "type": "git",
+            "url": "git://github.com/kvraamkey/nodeapi.git"
+        }
+    ],
+    "engines": {
+        "npm": ">=5",
+        "node": ">=8.15.1"
+    },
+    "main": "src/app.js",
+    "scripts": {
+        "start": "cross-env NODE_ENV=production babel-node src/app.js",
+        "dev": "cross-env NODE_ENV=development nodemon --exec babel-node src/app.js",
+        "generate": "plop --plopfile generators/index.js",
+        "db": "knex",
+        "format": "prettier --write \"src/**/*.{js,ejs,json}\"",
+        "format:check": "prettier -c \"src/**/*.{js,ejs}\""
+    },
+    "devDependencies": {
+        "@babel/core": "^7.9.0",
+        "@babel/node": "^7.8.7",
+        "@babel/preset-env": "^7.9.5",
+        "nodemon": "^2.0.3",
+        "prettier": "^2.0.5"
+    },
+    "dependencies": {
+        "@elastic/elasticsearch": "^7.6.1",
+        "@hapi/joi": "^17.1.1",
+        "body-parser": "^1.19.0",
+        "cors": "^2.8.5",
+        "cross-env": "^7.0.2",
+        "dotenv": "^8.2.0",
+        "ejs": "^3.1.3",
+        "email-templates": "^7.0.5",
+        "express": "^4.17.1",
+        "knex": "^0.21.0",
+        "mysql": "^2.18.1",
+        "nodemailer": "^6.4.6",
+        "plop": "^2.6.0",
+        "uuid": "^7.0.3"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "npm run format"
+        }
+    },
+    "keywords": [
+        "nodejs",
+        "expressjs",
+        "knexjs",
+        "jwt-authentication",
+        "token-based-authentication",
+        "rest-api",
+        "es6",
+        "boilerplate"
+    ],
+    "license": "MIT"
 }

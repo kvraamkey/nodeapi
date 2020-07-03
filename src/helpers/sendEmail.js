@@ -1,4 +1,4 @@
-import { transporter } from '../config';
+import { transporter } from "../config";
 
 export const sendMail = async ({ to, subject }) => {
     // send mail with defined transport object
@@ -6,13 +6,13 @@ export const sendMail = async ({ to, subject }) => {
         from: '"Fred Foo 👻" <support@toyshare.com>',
         to,
         subject,
-        template: 'index',
+        template: "index",
         context: {
-            name: 'Accime Esterling',
+            name: "Accime Esterling",
         },
     });
 
-    console.log('Message sent: %s', info.messageId);
+    console.log("Message sent: %s", info.messageId);
 
     return info;
 };

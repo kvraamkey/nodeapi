@@ -11,30 +11,30 @@
  *
  */
 
-import { to, successResponse } from './../../helpers';
+import { to, successResponse } from "./../../helpers";
 
 export default async ({ postData }) => {
     const [isErr, isMailSend] = await to(
         email.send({
-            template: 'test',
+            template: "test",
             message: {
                 subject: postData.subject,
                 from: postData.fromAddress,
                 to: postData.toAddress,
                 attachments: [
                     {
-                        filename: 'report.jpg',
-                        content: postData.imageLink.split('base64,')[1],
-                        encoding: 'base64',
-                        cid: 'edxi',
+                        filename: "report.jpg",
+                        content: postData.imageLink.split("base64,")[1],
+                        encoding: "base64",
+                        cid: "edxi",
                     },
                 ],
             },
             locals: {
-                name: 'User',
+                name: "User",
             },
         })
     );
     if (isErr) return validationError(isErr);
-    return successResponse('Mail Send Successfully.', isMailSend);
+    return successResponse("Mail Send Successfully.", isMailSend);
 };

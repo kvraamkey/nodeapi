@@ -5,7 +5,7 @@
  * @return  {[defaultValue]}  [return defaultValue]
  */
 
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 
 dotenv.config();
 const cache = {};

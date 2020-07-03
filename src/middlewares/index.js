@@ -1,2 +1,2 @@
-export * from './errorHandler';
-export * from './checkDomain';
+export * from "./errorHandler";
+export * from "./checkDomain";

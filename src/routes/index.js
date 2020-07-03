@@ -4,15 +4,15 @@
  * @return  {[post request]}  [return Global Routes with post request]
  */
 
-import { db } from './../config';
-import { validationError, to, accessEnv, toCamelcase } from './../helpers';
+import { db } from "./../config";
+import { validationError, to, accessEnv, toCamelcase } from "./../helpers";
 
 export default (app) => {
-    app.post('/:controller?/:action?', async (req, res) => {
+    app.post("/:controller?/:action?", async (req, res) => {
         if (!req.params.controller || !req.params.action)
             return res.status(200).json({
                 error: true,
-                message: 'A valid [controller] or [action] is required.',
+                message: "A valid [controller] or [action] is required.",
             });
         else {
             const controllerName = toCamelcase(req.params.controller);
@@ -28,8 +28,8 @@ export default (app) => {
                 //     sendRequestData.es = esConnection
                 // }
 
-                if (accessEnv('DB_ENABLED') === 'true') {
-                    const [isDbConnected] = await to(db.raw('select 1+1 as result'));
+                if (accessEnv("DB_ENABLED") === "true") {
+                    const [isDbConnected] = await to(db.raw("select 1+1 as result"));
                     if (isDbConnected) {
                         return res.status(200).json(validationError({ message: isDbConnected.message }));
                     }

@@ -11,8 +11,8 @@
  *
  */
 
-import { to, successResponse } from './../../helpers';
+import { to, successResponse } from "./../../helpers";
 
 export default async ({ postData }) => {
-    return successResponse('success response', []);
+    return successResponse("success response", []);
 };
