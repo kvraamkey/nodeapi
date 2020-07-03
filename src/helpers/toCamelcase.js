@@ -4,5 +4,4 @@
  * @var  {[string]}
  */
 
-export const toCamelcase = (string) =>
-  string.replace(/-([a-z])/g, (m, w) => w.toUpperCase());
+export const toCamelcase = (string) => string.replace(/-([a-z])/g, (m, w) => w.toUpperCase());
