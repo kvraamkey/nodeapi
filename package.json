@@ -23,7 +23,7 @@
         "generate": "plop --plopfile generators/index.js",
         "db": "knex",
         "format": "prettier --write \"src/**/*.{js,ejs,json}\"",
-        "format:check": "prettier -c \"src/**/*.{js,ejs}\""
+        "format:check": "prettier -c \"src/**/*.{js,ejs,json}\""
     },
     "devDependencies": {
         "@babel/core": "^7.9.0",
