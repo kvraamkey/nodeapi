@@ -11,30 +11,31 @@
  *
  */
 
-import { to, successResponse } from "./../../helpers";
+import Joi from "@hapi/joi";
+import { validationError, successResponse, to, accessEnv } from "./../../helpers";
+import { email } from "../../config";
+
+const schema = Joi.object({
+    fromAddress: Joi.string().optional(),
+    toAddress: Joi.string().required(),
+    template: Joi.string().required(),
+    data: Joi.object().required(),
+});
 
 export default async ({ postData }) => {
+    const { error } = schema.validate({ ...postData });
+    if (error) return validationError(error);
+
     const [isErr, isMailSend] = await to(
         email.send({
-            template: "test",
+            template: postData.template,
             message: {
-                subject: postData.subject,
-                from: postData.fromAddress,
+                from: accessEnv("EMAIL_FROM"),
                 to: postData.toAddress,
-                attachments: [
-                    {
-                        filename: "report.jpg",
-                        content: postData.imageLink.split("base64,")[1],
-                        encoding: "base64",
-                        cid: "edxi",
-                    },
-                ],
             },
-            locals: {
-                name: "User",
-            },
+            locals: postData.data,
         })
     );
-    if (isErr) return validationError(isErr);
+    if (isErr) return validationError(isErr.message);
     return successResponse("Mail Send Successfully.", isMailSend);
 };
